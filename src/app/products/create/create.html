@@ -1,0 +1,15 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-4">
+      <h2>Nuevo producto</h2>
+      <form (ngSubmit)="createProduct()">
+        <div class="mb-3">
+          <label for="name" class="form-label">Nombre</label>
+          <input type="text" id="name" [(ngModel)]="name" name="name" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Crear</button>
+        <div *ngIf="error" class="alert alert-danger mt-3">{{ error }}</div>
+      </form>
+    </div>
+  </div>
+</div>
