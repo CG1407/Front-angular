@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { Products } from '../products';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-create',
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './create.html',
   styleUrl: './create.scss'
 })

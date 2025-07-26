@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { Products } from '../products';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-edit',
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './edit.html',
   styleUrl: './edit.scss'
 })

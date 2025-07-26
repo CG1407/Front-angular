@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Auth } from '../../auth/auth';
+import { inject } from '@angular/core';
+import { Auth } from '../auth/auth';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +10,14 @@ import { Auth } from '../../auth/auth';
 export class Products {
   private apiUrl = 'http://localhost:3000/products';
 
-  constructor(private http: HttpClient, private auth: Auth) {}
+  constructor(private http: HttpClient) {}
+
+  private getAuth(): Auth {
+    return inject(Auth);
+  }
 
   private getHeaders(): HttpHeaders {
-    const token = this.auth.getToken();
+    const token = this.getAuth().getToken();
     return new HttpHeaders({
       Authorization: `Bearer ${token}`
     });
